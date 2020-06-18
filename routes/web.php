@@ -27,6 +27,7 @@ Route::post('Api/AddMember','Api@AddMember');
 Route::post('Api/AddBqTender','Api@InputBQTender');
 Route::post('Api/InputPersonil','Api@InputPersonil');
 Route::post('Api/InputPerlengkapan','Api@InputPerlengkapan');
+Route::post('Api/InputLain2','Api@InputLain2');
 
 /**
  * 

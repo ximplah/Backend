@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>XRay - Responsive Bootstrap 4 Admin Dashboard Template</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="images/favicon.ico" />
+      <link rel="shortcut icon" href="/images/favicon.ico" />
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="/css/bootstrap.min.css">
       <!-- Typography CSS -->
@@ -31,7 +31,7 @@
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
                <a href="index.html">
-               <img src="images/logo.png" class="img-fluid" alt="">
+               <img src="/images/logo.png" class="img-fluid" alt="">
                <span>XRay</span>
                </a>
                <div class="iq-menu-bt-sidebar">
@@ -77,7 +77,7 @@
                   <div class="iq-sidebar-logo">
                      <div class="top-logo">
                         <a href="index.html" class="logo">
-                        <img src="images/logo.png" class="img-fluid" alt="">
+                        <img src="/images/logo.png" class="img-fluid" alt="">
                         <span>XRay</span>
                         </a>
                      </div>
@@ -94,7 +94,7 @@
                      <ul class="navbar-list">
                         <li>
                            <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <img src="images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
+                              <img src="/images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
                               <div class="caption">
                                  <h6 class="mb-0 line-height">Bini Jets</h6>
                                  <span class="font-size-12">Available</span>
@@ -169,7 +169,7 @@
                   <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title">Horizontal Form</h4>
+                              <h4 class="card-title">Tambah BQ</h4>
                            </div>
                         </div>
 
@@ -183,31 +183,32 @@
             'lama_tender' => $request->input('lama_tender')
                         -->
                         <div class="iq-card-body">
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p>
-                           
+                           <p>Form Tambah BQ</p>
+                           <div id="notice"></div>
+                           <form id="tambah_bq">
                               <div class="form-group row">
-                                 <label class="control-label col-sm-2 align-self-center mb-0" for="email">Nama Tender:</label>
+                                 <label class="control-label col-sm-2 align-self-center mb-0" for="nama_tender">Nama Tender:</label>
                                  <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nama_tender" id="email" placeholder="Nama Tender">
+                                    <input type="text" class="form-control" id="nama_tender"  placeholder="Nama Tender" required>
                                  </div>
                               </div>
                               <div class="form-group row">
-                                 <label class="control-label col-sm-2 align-self-center mb-0" for="pwd1">Nilai Tender:</label>
+                                 <label class="control-label col-sm-2 align-self-center mb-0" for="nama_tender">Nilai Tender:</label>
                                  <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nilai_tender" id="pwd1" placeholder="Nilai Tender">
+                                    <input type="number" class="form-control" id="nilai_tender"  placeholder="Nilai Tender" required>
                                  </div>
                               </div>
                               <div class="form-group row">
-                                 <label class="control-label col-sm-2 align-self-center mb-0" for="pwd1">Nama Instansi:</label>
+                                 <label class="control-label col-sm-2 align-self-center mb-0" for="nama_tender">Nama Instansi:</label>
                                  <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="instansi_tender" id="pwd1" placeholder="Nama Instansi">
+                                    <input type="text" class="form-control" id="instansi_tender"  placeholder="Nama Instansi" required>
                                  </div>
                               </div>
 
                               <div class="form-group row">
-                                 <label class="control-label col-sm-2 align-self-center mb-0" for="pwd1">Lama Tender:</label>
+                                 <label class="control-label col-sm-2 align-self-center mb-0" for="nama_tender">Lama Tender:</label>
                                  <div class="col-sm-1">
-                                    <input type="text" class="form-control" id="lama_tender" id="pwd1" placeholder="Bulan">
+                                    <input type="number" class="form-control" id="lama_tender" placeholder="Bulan" required>
                                  </div>
                               </div>
 
@@ -223,15 +224,15 @@
                                  </div>
                                  <div class="col-sm-3">
                                      <label> Jabatan </label>
-                                    <input type="text" class="form-control" id="personil_jabatan" placeholder="Jabatan">
+                                    <input type="text" class="form-control" id="personil_jabatan" placeholder="Jabatan" required>
                                  </div>
                                  <div class="col-sm-3">
                                     <label> Gaji (RP) </label>
-                                    <input type="text" class="form-control" id="personil_gaji" placeholder="Gaji">
+                                    <input type="number" class="form-control" id="personil_gaji" placeholder="Gaji" required>
                                  </div>
                                  <div class="col-sm-1">
                                     <label> Jumlah </label>
-                                    <input type="text" class="form-control" id="personil_jumlah" placeholder="Last name">
+                                    <input type="number" class="form-control" id="personil_jumlah" placeholder="Jumlah" required>
                                  </div>
                               </div>
                               <br/>
@@ -247,15 +248,15 @@
                                  </div>
                                  <div class="col-sm-3">
                                      <label> Nama Barang </label>
-                                    <input type="text" class="form-control" id="nama_perlengkapan" placeholder="Nama Barang">
+                                    <input type="text" class="form-control" id="nama_perlengkapan" placeholder="Nama Barang" required>
                                  </div>
                                  <div class="col-sm-3">
                                     <label> Nominal (RP) </label>
-                                    <input type="text" class="form-control" id="nominal_perlengkapan" placeholder="Nominal">
+                                    <input type="number" class="form-control" id="nominal_perlengkapan" placeholder="Nominal" required>
                                  </div>
                                  <div class="col-sm-1">
                                     <label> Jumlah </label>
-                                    <input type="text" class="form-control" id="jumlah_perlengkapan" placeholder="Jumlah">
+                                    <input type="number" class="form-control" id="jumlah_perlengkapan" placeholder="Jumlah" required>
                                  </div>
                               </div>
 
@@ -273,24 +274,26 @@
                                  </div>
                                  <div class="col-sm-3">
                                      <label> Nama Item </label>
-                                    <input type="text" id="nama_lain2" class="form-control" placeholder="Nama Item">
+                                    <input type="text" id="nama_lain2" class="form-control" placeholder="Nama Item " required>
                                  </div>
                                  <div class="col-sm-3">
                                     <label> Nominal (RP) </label>
-                                    <input type="text" id="nominal_lain2" class="form-control" placeholder="Nominal">
+                                    <input type="number" id="nominal_lain2" class="form-control" placeholder="Nominal" required>
                                  </div>
                                  <div class="col-sm-1">
                                     <label> Jumlah </label>
-                                    <input type="text" id="jumlah_lain2" class="form-control" placeholder="Jumlah">
+                                    <input type="number" id="jumlah_lain2" class="form-control" placeholder="Jumlah" required>
                                  </div>
                               </div>
                               
                               <br/>
                               
                               <div class="form-group">
-                                 <button id="Tambah" class="btn btn-primary">Submit</button>
+                                 <button id="Tambah" type="submit" class="btn btn-primary">Submit</button>
                                 
                               </div>
+
+                              </form>
                           
                         </div>
                      </div>
@@ -355,7 +358,9 @@
           $('document').ready(function(){
 
             console.log('OOOOOOOOOOOOOOOOOOOOOOOIIIII!');
-            $('#Tambah').click(function(){
+            $('form[id=tambah_bq]').submit(function(e){
+
+               e.preventDefault();
 
                 var tender_param = {
                     nama : $('#nama_tender').val(),
@@ -363,16 +368,17 @@
                     instansi : $('#instansi_tender').val(),
                     lama_tender : $('#lama_tender').val()
                 }
-
-                var param_1 = "nama="+tender_param.nama+"&nilai="+tender_param.nilai+"&instansi="+tender_param.instansi+"&lama_tender"=tender_param.lama_tender;
+               
                 var personil_param = {
+                    nama : $('#nama_tender').val(),
                     jabatan : $('#personil_jabatan').val(),
                     gaji: $('#personil_gaji').val(),
-                    jumlah : $('#personil_jumlah')
+                    jumlah : $('#personil_jumlah').val()
                 }
 
                 var perlengkapan_param = {
-                    nama : $('#nama_perlengkapan').val(),
+                    nama : $('#nama_tender').val(),
+                    nama_perlengkapan : $('#nama_perlengkapan').val(),
                     nominal: $('#nominal_perlengkapan').val(),
                     jumlah : $('#jumlah_perlengkapan').val(),
                 }
@@ -385,15 +391,81 @@
 
                 $.ajax({
                     url : '/Api/AddBqTender',
+                    dataType: 'json',
                     method : 'POST',
-                    data : param_1,
+                    data : JSON.stringify(tender_param),
                     success : function(data)
                     {
                         console.log(data)
+                        if(data.status == 200){
+                        $('#notice').append( `<div class="alert alert-success">`+data.msg+`</div>` );
+                        }else{
+                           $('#notice').append( `<div class="alert alert-danger">`+JSON.stringify(data)+`</div>` );
+                        }
                     },
                     error: function()
                     {
+                        $('#notice').append( `<div class="alert alert-danger">Terdapat Error Pada Server</div>` );
+                    }
+                })
+                
+                $.ajax({
+                   url : '/Api/InputPersonil',
+                   dataType: 'json',
+                    method : 'POST',
+                    data : JSON.stringify(personil_param),
+                    success : function(data)
+                    {
                         console.log(data)
+                        if(data.status == 200){
+                        $('#notice').append( `<div class="alert alert-success">`+data.msg+`</div>` );
+                        }else{
+                           $('#notice').append( `<div class="alert alert-danger">`+JSON.stringify(data)+`</div>` );
+                        }
+                    },
+                    error: function()
+                    {
+                        $('#notice').append( `<div class="alert alert-danger">Terdapat Error Pada Server</div>` );
+                    }
+                })
+
+                $.ajax({
+                   url : '/Api/InputPerlengkapan',
+                   dataType: 'json',
+                    method : 'POST',
+                    data : JSON.stringify(perlengkapan_param),
+                    success : function(data)
+                    {
+                        console.log(data)
+                        if(data.status == 200){
+                        $('#notice').append( `<div class="alert alert-success">`+data.msg+`</div>` );
+                        }else{
+                           $('#notice').append( `<div class="alert alert-danger">`+JSON.stringify(data)+`</div>` );
+                        }
+                    },
+                    error: function()
+                    {
+                        $('#notice').append( `<div class="alert alert-danger">Terdapat Error Pada Server</div>` );
+                    }
+                })
+
+                $.ajax({
+                   url : '/Api/InputLain2',
+                   dataType: 'json',
+                    method : 'POST',
+                    data : JSON.stringify(lain2_param),
+                    success : function(data)
+                    {
+                        console.log(data)
+                        if(data.status == 200){
+                        $('#notice').append( `<div class="alert alert-success">`+data.msg+`</div>` );
+                        }else{
+                           $('#notice').append( `<div class="alert alert-danger">`+JSON.stringify(data)+`</div>` );
+                        }
+                    },
+                    error: function()
+                    {
+                        $('#notice').append( `<div class="alert alert-danger">Terdapat Error Pada Server</div>` );
                     }
                 })
             })

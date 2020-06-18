@@ -41,9 +41,9 @@ class Api extends Controller
         }
         if(password_verify($password,$encrypt_password)){ 
 
-           
+            $store_data = Arr::except($get_encrypt_password[0], ['pass']);
             $request->session()->put('login', true);
-            $request->session()->put('user_data', Arr::except($get_encrypt_password, 'pass'));
+            $request->session()->put('user_data', $store_data);
             return ['status' => 200, 'msg' => 'Sucess Login!'];            
             
         }else{ 
@@ -92,14 +92,36 @@ class Api extends Controller
         
     }
 
+    private function getFKBq($nama)
+    {
+        $getID = BQ::query()->select('id')
+        ->where('nama', $nama)
+        ->first();
+
+        return $getID->id;
+    }
+
 
     public function InputBQTender(Request $request)
     {
+        $req = $request->json()->all();
+        $validator = Validator::make($req, [
+            'nama' => 'required',
+            'nilai' => 'required',
+            'instansi' => 'required',
+            'lama_tender' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return ['status' => 400, 'msg' => $validator->errors() ];
+            exit;
+        }
+
         $data = [
-            'nama' => $request->input('nama'),
-            'nilai' => $request->input('nilai'),
-            'instansi' => $request->input('instansi'),
-            'lama_tender' => $request->input('lama_tender')
+            'nama' => $req['nama'],
+            'nilai' => $req['nilai'],
+            'instansi' => $req['instansi'],
+            'lama_tender' => $req['lama_tender']
         ];
 
         Bq::create($data);
@@ -110,15 +132,24 @@ class Api extends Controller
 
     public function InputPersonil(Request $request)
     {
-        $ID_BQ = BQ::query()->select('id')
-        ->where('nama',$request->input('nama'))
-        ->first();
+        $req = $request->json()->all();
+        $validator = Validator::make($req, [
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'gaji' => 'required',
+            'jumlah' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return ['status' => 400, 'msg' => $validator->errors() ];
+            exit;
+        }
 
         $data = [
-            'jabatan' => $request->input('jabatan'),
-            'gaji' => $request->input('gaji'),
-            'jumlah' => $request->input('jumlah'),
-            'id_bq' => $ID_BQ->id
+            'jabatan' => $req['jabatan'],
+            'gaji' => $req['gaji'],
+            'jumlah' => $req['jumlah'],
+            'id_bq' => $this->getFKBq($req['nama'])
         ];
 
         personil::create($data);
@@ -128,15 +159,24 @@ class Api extends Controller
 
     public function InputPerlengkapan(Request $request)
     {
-        $ID_BQ = BQ::query()->select('id')
-        ->where('nama',$request->input('nama'))
-        ->first();
+        $req = $request->json()->all();
+        $validator = Validator::make($req, [
+            'nama' => 'required',
+            'nominal' => 'required',
+            'jumlah' => 'required',
+            'nama_perlengkapan' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return ['status' => 400, 'msg' => $validator->errors() ];
+            exit;
+        }
 
         $data = [
-            'nama' => $request->input('nama'),
-            'nominal' => $request->input('nominal'),
-            'jumlah' => $request->input('jumlah'),
-            'id_bq' => $ID_BQ->id
+            'nama' => $req['nama_perlengkapan'],
+            'nominal' => $req['nominal'],
+            'jumlah' => $req['jumlah'],
+            'id_bq' => $this->getFKBq($req['nama'])
         ];
 
         perlengkapan::create($data);
@@ -147,18 +187,26 @@ class Api extends Controller
 
     public function InputLain2(Request $request)
     {
-        $ID_BQ = BQ::query()->select('id')
-        ->where('nama',$request->input('nama'))
-        ->first();
+        $req = $request->json()->all();
+        $validator = Validator::make($req, [
+            'nama' => 'required',
+            'nominal' => 'required',
+            'jumlah' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return ['status' => 400, 'msg' => $validator->errors() ];
+            exit;
+        }
 
         $data = [
-            'nama' => $request->input('nama'),
-            'nominal' => $request->input('nominal'),
-            'jumlah' => $request->input('jumlah'),
-            'id_bq' => $ID_BQ->id
+            'nama' => $req['nama'],
+            'nominal' => $req['nominal'],
+            'jumlah' => $req['jumlah'],
+            'id_bq' => $this->getFKBq($req['nama'])
         ];
 
-        perlengkapan::create($data);
+        lain::create($data);
 
         return ['status' => 200, 'msg' => 'Sukses Tambah InputPerlengkapan Tender'];
     }
