@@ -27,3 +27,12 @@ Route::post('Api/AddMember','Api@AddMember');
 Route::post('Api/AddBqTender','Api@InputBQTender');
 Route::post('Api/InputPersonil','Api@InputPersonil');
 Route::post('Api/InputPerlengkapan','Api@InputPerlengkapan');
+
+/**
+ * 
+ *  UI Routing
+ */
+
+ Route::get('/dashboard','UiController@dashboard');
+ Route::get('/bq','UiController@BQ');
+ Route::get('/bq/tambah','UiController@TambahBq');

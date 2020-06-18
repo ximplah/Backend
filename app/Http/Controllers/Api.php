@@ -34,8 +34,11 @@ class Api extends Controller
         ->where('user',$username)
         ->get()
         ->toArray();
+        if(count($get_encrypt_password) == 0 ){
+            $encrypt_password = rand(1000,9000);
+        }else{
         $encrypt_password = $get_encrypt_password[0]['pass'];
-
+        }
         if(password_verify($password,$encrypt_password)){ 
 
            

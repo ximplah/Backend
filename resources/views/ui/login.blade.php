@@ -1,79 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-@extends('ui.head')
-
-@section('title','Ngaah Login')
-
-
-<body class="form">
-    
-
-    <div class="form-container">
-        <div class="form-form">
-            <div class="form-form-wrap">
-                <div class="form-container">
-                    <div class="form-content">
-
-                        <h1 class="">Log In to <a href="index.html"><span class="brand-name">CORK</span></a></h1>
-                        <p class="signup-link">New Here? <a href="auth_register.html">Create an account</a></p>
-                        <form class="text-left">
-                            <div class="form">
-
-                                <div id="username-field" class="field-wrapper input">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                    <input id="username" name="username" type="text" class="form-control" placeholder="Username">
+   
+<!-- Mirrored from iqonic.design/themes/xray/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jun 2020 08:58:13 GMT -->
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{{ $title }}</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/images/favicon.ico" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="/css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="/css/style.css">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="/css/responsive.css">
+   </head>
+   <body>
+      <!-- loader Start -->
+      <div id="loading">
+         <div id="loading-center">
+         </div>
+      </div>
+      <!-- loader END -->
+        <!-- Sign in Start -->
+        <section class="sign-in-page">
+            <div class="container sign-in-page-bg mt-5 p-0">
+                <div class="row no-gutters">
+                    <div class="col-md-6 text-center">
+                        <div class="sign-in-detail text-white">
+                            <a class="sign-in-logo mb-5" href="#"><img src="/images/logo-white.png" class="img-fluid" alt="logo"></a>
+                            <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
+                                <div class="item">
+                                    <img src="/images/login/1.png" class="img-fluid mb-4" alt="logo">
+                                    <h4 class="mb-1 text-white">Manage your orders</h4>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content.</p>
                                 </div>
-
-                                <div id="password-field" class="field-wrapper input mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Password">
+                                <div class="item">
+                                    <img src="/images/login/2.png" class="img-fluid mb-4" alt="logo">
+                                    <h4 class="mb-1 text-white">Manage your orders</h4>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content.</p>
                                 </div>
-                                <div class="d-sm-flex justify-content-between">
-                                    <div class="field-wrapper toggle-pass">
-                                        <p class="d-inline-block">Show Password</p>
-                                        <label class="switch s-primary">
-                                            <input type="checkbox" id="toggle-password" class="d-none">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="field-wrapper">
-                                        <button type="submit" class="btn btn-primary" value="">Log In</button>
-                                    </div>
-                                    
+                                <div class="item">
+                                    <img src="/images/login/3.png" class="img-fluid mb-4" alt="logo">
+                                    <h4 class="mb-1 text-white">Manage your orders</h4>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content.</p>
                                 </div>
-
-                                <div class="field-wrapper text-center keep-logged-in">
-                                    <div class="n-chk new-checkbox checkbox-outline-primary">
-                                        <label class="new-control new-checkbox checkbox-outline-primary">
-                                          <input type="checkbox" class="new-control-input">
-                                          <span class="new-control-indicator"></span>Keep me logged in
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="field-wrapper">
-                                    <a href="auth_pass_recovery.html" class="forgot-pass-link">Forgot Password?</a>
-                                </div>
-
                             </div>
-                        </form>                        
-                        <p class="terms-conditions">© 2019 All Rights Reserved. <a href="index.html">CORK</a> is a product of Designreset. <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.</p>
-
-                    </div>                    
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <div class="sign-in-from">
+                            
+                            <h1 class="mb-0">Sign in</h1>
+                            <p>Enter your email address and password to access admin panel.</p>
+                            <div id="notice"></div>
+                            <div id="redirect"></div>
+                            <form id="Login" class="mt-4">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Username</label>
+                                    <input name="username" type="text" class="form-control mb-0" id="exampleInputEmail1" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <a href="#" class="float-right">Forgot password?</a>
+                                    <input name="password" type="password" class="form-control mb-0" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="d-inline-block w-100">
+                                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Remember Me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary float-right">Login</button>
+                                </div>
+                                <div class="sign-info">
+                                    <span class="dark-color d-inline-block line-height-2">Don't have an account? <a href="#">Sign up</a></span>
+                                    <ul class="iq-social-media">
+                                        <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
+                                        <li><a href="#"><i class="ri-twitter-line"></i></a></li>
+                                        <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-image">
-            <div class="l-image">
-            </div>
-        </div>
-    </div>
+        </section>
+        <!-- Sign in END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Appear JavaScript -->
+      <script src="/js/jquery.appear.js"></script>
+      <!-- Countdown JavaScript -->
+      <script src="/js/countdown.min.js"></script>
+      <!-- Counterup JavaScript -->
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Wow JavaScript -->
+      <script src="/js/wow.min.js"></script>
+      <!-- Apexcharts JavaScript -->
+      <script src="/js/apexcharts.js"></script>
+      <!-- Slick JavaScript -->
+      <script src="/js/slick.min.js"></script>
+      <!-- Select2 JavaScript -->
+      <script src="/js/select2.min.js"></script>
+      <!-- Owl Carousel JavaScript -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Magnific Popup JavaScript -->
+      <script src="/js/jquery.magnific-popup.min.js"></script>
+      <!-- Smooth Scrollbar JavaScript -->
+      <script src="/js/smooth-scrollbar.js"></script>
+      <!-- Chart Custom JavaScript -->
+      <script src="/js/chart-custom.js"></script>
+      <!-- Custom JavaScript -->
+      <script src="/js/custom.js"></script>
+   </body>
+
+   <script>
+
+       $('document').ready(function(){
 
 
-@extends('ui.foot')
+        console.log('Ready!!!!');
 
+        $('#Login').submit(function(e){
+            e.preventDefault();
+            var data =  $('#Login').serialize();
+            console.log(data);
 
-</body>
+            $.ajax({
+                url : '/Api/Login',
+                method : 'POST',
+                data : data,
+                success : function(data){
+                    console.log(data);
+                    if(data.status == 200){
+                        $('#notice').html( `<div class="alert alert-success">`+ data.msg +`</div>` );
+                        $('#redirect').html( `<meta http-equiv="refresh" content="2; url=/dashboard">` );
+                    }else{
+                        $('#notice').html( `<div class="alert alert-danger">`+ data.msg +`</div>` );
+                    }
+                },
+                error : function()
+                {
 
+                }
+            })
+        })
+       });
+
+    </script>
+
+<!-- Mirrored from iqonic.design/themes/xray/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jun 2020 08:58:14 GMT -->
 </html>
