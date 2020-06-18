@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Bq;
+
 class UIController extends Controller
 {
     public function login()
@@ -21,7 +23,9 @@ class UIController extends Controller
 
     public function BQ()
     {
-        return view('ui/bq');
+        return view('ui/bq',[
+            'data_table' => BQ::all()
+        ]);
     }
 
     public function TambahBq()

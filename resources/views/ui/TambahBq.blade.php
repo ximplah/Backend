@@ -17,6 +17,8 @@
       <link rel="stylesheet" href="/css/style.css">
       <!-- Responsive CSS -->
       <link rel="stylesheet" href="/css/responsive.css">
+      <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
+
    </head>
    <body>
       <!-- loader Start -->
@@ -352,6 +354,7 @@
       <script src="/js/chart-custom.js"></script>
       <!-- Custom JavaScript -->
       <script src="/js/custom.js"></script>
+      <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
 
       <script>
 

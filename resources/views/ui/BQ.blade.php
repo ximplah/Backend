@@ -8,15 +8,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>XRay - Responsive Bootstrap 4 Admin Dashboard Template</title>
       <!-- Favicon -->
-      <link rel="shortcut icon" href="images/favicon.ico" />
+      <link rel="shortcut icon" href="/images/favicon.ico" />
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
       <!-- Typography CSS -->
-      <link rel="stylesheet" href="css/typography.css">
+      <link rel="stylesheet" href="/css/typography.css">
       <!-- Style CSS -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="/css/style.css">
       <!-- Responsive CSS -->
-      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="/css/responsive.css">
+
+      <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
    </head>
    <body>
       <!-- loader Start -->
@@ -31,7 +33,7 @@
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
                <a href="index.html">
-               <img src="images/logo.png" class="img-fluid" alt="">
+               <img src="/images/logo.png" class="img-fluid" alt="">
                <span>XRay</span>
                </a>
                <div class="iq-menu-bt-sidebar">
@@ -77,7 +79,7 @@
                   <div class="iq-sidebar-logo">
                      <div class="top-logo">
                         <a href="index.html" class="logo">
-                        <img src="images/logo.png" class="img-fluid" alt="">
+                        <img src="/images/logo.png" class="img-fluid" alt="">
                         <span>XRay</span>
                         </a>
                      </div>
@@ -94,7 +96,7 @@
                      <ul class="navbar-list">
                         <li>
                            <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <img src="images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
+                              <img src="/images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
                               <div class="caption">
                                  <h6 class="mb-0 line-height">Bini Jets</h6>
                                  <span class="font-size-12">Available</span>
@@ -186,15 +188,18 @@
                                     </tr>
                                  </thead>
                                  <tbody>
+
+                                    @foreach ( $data_table as $value  )
                                     <tr>
-                                       <td>Tiger Nixon</td>
-                                       <td>System Architect</td>
-                                       <td>Edinburgh</td>
-                                       <td>61</td>
+                                       <td>{{ $value->nama }}</td>
+                                       <td>{{ $value->nilai }}</td>
+                                       <td>{{ $value->instansi }}</td>
+                                       <td>{{ $value->lama_tender }}</td>
                                        <td class="text-nowrap"> <button class="btn btn-warning"> Edit </button> <button class="btn btn-danger"> Delete </button> </td>
                                       
                                     </tr>
 
+                                    @endforeach
                                    
                                  </tbody>
                                  
@@ -227,37 +232,45 @@
       <!-- Wrapper END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
       <!-- Appear JavaScript -->
-      <script src="js/jquery.appear.js"></script>
+      <script src="/js/jquery.appear.js"></script>
       <!-- Countdown JavaScript -->
-      <script src="js/countdown.min.js"></script>
+      <script src="/js/countdown.min.js"></script>
       <!-- Counterup JavaScript -->
-      <script src="js/waypoints.min.js"></script>
-      <script src="js/jquery.counterup.min.js"></script>
+      <script src="/js/waypoints.min.js"></script>
+      <script src="/js/jquery.counterup.min.js"></script>
       <!-- Wow JavaScript -->
-      <script src="js/wow.min.js"></script>
+      <script src="/js/wow.min.js"></script>
       <!-- Apexcharts JavaScript -->
-      <script src="js/apexcharts.js"></script>
+      <script src="/js/apexcharts.js"></script>
       <!-- Slick JavaScript -->
-      <script src="js/slick.min.js"></script>
+      <script src="/js/slick.min.js"></script>
       <!-- Select2 JavaScript -->
-      <script src="js/select2.min.js"></script>
+      <script src="/js/select2.min.js"></script>
       <!-- Owl Carousel JavaScript -->
-      <script src="js/owl.carousel.min.js"></script>
+      <script src="/js/owl.carousel.min.js"></script>
       <!-- Magnific Popup JavaScript -->
-      <script src="js/jquery.magnific-popup.min.js"></script>
+      <script src="/js/jquery.magnific-popup.min.js"></script>
       <!-- Smooth Scrollbar JavaScript -->
-      <script src="js/smooth-scrollbar.js"></script>
+      <script src="/js/smooth-scrollbar.js"></script>
       <!-- lottie JavaScript -->
-      <script src="js/lottie.js"></script>
+      <script src="/js/lottie.js"></script>
       <!-- Chart Custom JavaScript -->
-      <script src="js/chart-custom.js"></script>
+      <script src="/js/chart-custom.js"></script>
       <!-- Custom JavaScript -->
-      <script src="js/custom.js"></script>
+      <script src="/js/custom.js"></script>
+      <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
    </body>
+
+   <script>
+
+      $(document).ready( function () {
+         $('#datatable').DataTable();
+      } );
+   </script>
 
 <!-- Mirrored from iqonic.design/themes/xray/html/data-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jun 2020 08:58:10 GMT -->
 </html>
